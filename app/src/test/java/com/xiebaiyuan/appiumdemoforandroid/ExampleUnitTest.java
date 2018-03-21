@@ -34,12 +34,32 @@ public class ExampleUnitTest {
         //指定当前的模拟器为测试目标,指定测试应用是  "com.android.calculator2" 计算器
         AppiumDriver driver = getAndroidDriver();
 
+        // 7 + 8
         //点击id 是digit_7的视图
         ActionUtil.clickAnElement(driver,"digit_7");
+        //点击+
+        ActionUtil.clickAnElement(driver,"op_add");
+        //点击8
+        ActionUtil.clickAnElement(driver,"digit_8");
+        //点击=
+        ActionUtil.clickAnElement(driver,"eq");
+
+
+       // WebElement result = ActionUtil.getWebElement(driver);
+
+        //获取结果
+        String result = ActionUtil.getWebElementText(driver);
+
+        //打个log看下-->当然无所谓,不打也ok
+        System.out.println("result: "+result);
+
+        //断言我操作的结果应该是
+        assertEquals(result,String.valueOf(7+8));//断言这个结果 是 7+8=15
+
     }
 
 
-
+    // TODO: 2018/3/22  这个东西放在哪里呢?  容我想想 
     @NonNull
     private AppiumDriver getAndroidDriver() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
