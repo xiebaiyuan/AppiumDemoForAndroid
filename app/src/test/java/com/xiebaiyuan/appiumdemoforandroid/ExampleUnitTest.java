@@ -3,6 +3,7 @@ package com.xiebaiyuan.appiumdemoforandroid;
 import android.support.annotation.NonNull;
 
 import com.xiebaiyuan.appiumdemoforandroid.utils.ActionUtil;
+import com.xiebaiyuan.appiumdemoforandroid.utils.ScreenCaptureUtil;
 
 import org.junit.Test;
 import org.openqa.selenium.OutputType;
@@ -24,10 +25,10 @@ import static org.junit.Assert.assertEquals;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
-    }
+//    @Test
+//    public void addition_isCorrect() throws Exception {
+//        assertEquals(4, 2 + 2);
+//    }
 
 
     @Test
@@ -57,7 +58,8 @@ public class ExampleUnitTest {
         //断言我操作的结果应该是
         assertEquals(result,String.valueOf(7+8));//断言这个结果 是 7+8=15
 
-
+        //截个图
+        ScreenCaptureUtil.screenShotDefault(driver,"haha");
 
     }
 
