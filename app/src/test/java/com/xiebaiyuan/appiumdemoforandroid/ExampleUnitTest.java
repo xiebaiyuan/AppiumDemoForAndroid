@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import com.xiebaiyuan.appiumdemoforandroid.utils.ActionUtil;
 
 import org.junit.Test;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -56,10 +57,12 @@ public class ExampleUnitTest {
         //断言我操作的结果应该是
         assertEquals(result,String.valueOf(7+8));//断言这个结果 是 7+8=15
 
+
+
     }
 
 
-    // TODO: 2018/3/22  这个东西放在哪里呢?  容我想想 
+    // TODO: 2018/3/22  这个东西放在哪里呢?  容我想想
     @NonNull
     private AppiumDriver getAndroidDriver() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
