@@ -3,6 +3,7 @@ package com.xiebaiyuan.appiumdemoforandroid.utils;
 import org.openqa.selenium.WebElement;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 
 /**
  * Created by xiebaiyuan on 2018/3/22.
@@ -24,10 +25,12 @@ public class ActionUtil {
      * 获取某个视图
      *
      * @param driver
+     * @param elementId
+     *
      * @return
      */
-    public static WebElement getWebElement(AppiumDriver driver) {
-        return driver.findElementById("result");
+    public static WebElement getWebElement(AppiumDriver driver,String elementId) {
+        return driver.findElementById(elementId);
     }
 
     /**
@@ -36,7 +39,16 @@ public class ActionUtil {
      * @param driver
      * @return
      */
-    public static String getWebElementText(AppiumDriver driver) {
-        return getWebElement(driver).getText();
+    public static String getWebElementText(AppiumDriver driver,String elementId) {
+        return getWebElement(driver,elementId).getText();
     }
+
+    /**
+     * 长按
+     * @param driver
+     */
+    public static void longPressElement(AppiumDriver driver,String elementId){
+        new TouchAction(driver).longPress(getWebElement(driver,elementId)).perform();
+    }
+
 }
