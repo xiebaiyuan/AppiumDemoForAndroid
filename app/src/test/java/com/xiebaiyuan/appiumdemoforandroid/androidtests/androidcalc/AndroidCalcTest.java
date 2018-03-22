@@ -81,12 +81,26 @@ public class AndroidCalcTest implements IAppiumTestCase {
 
     }
 
+    /**
+     * 尝试下longpress
+     * @throws Exception
+     */
     @Test
     public void testCopyResult() throws Exception {
         getMyDriver();
+        testForAppium();
 
         ActionUtil.longPressElement(mDriver, "result");
     }
-
+    /**
+     * 尝试下longpress
+     * @throws Exception
+     */
+    @Test
+    public void testSwip() throws Exception {
+        getMyDriver();
+        //从扩展功能的位置滑动到4的位置.
+        ActionUtil.swipToTarget(mDriver,"pad_advanced","digit_4");
+    }
 
 }

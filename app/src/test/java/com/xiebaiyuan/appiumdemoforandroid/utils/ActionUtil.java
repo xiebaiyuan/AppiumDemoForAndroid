@@ -2,6 +2,8 @@ package com.xiebaiyuan.appiumdemoforandroid.utils;
 
 import org.openqa.selenium.WebElement;
 
+import java.time.Duration;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 
@@ -51,4 +53,14 @@ public class ActionUtil {
         new TouchAction(driver).longPress(getWebElement(driver,elementId)).perform();
     }
 
+    /**
+     * 从一个element的位置滑动到另一个element的位置
+     * @param driver
+     * @param pad_advanced
+     * @param target
+     */
+    public static void swipToTarget(AppiumDriver driver, String pad_advanced,String target) {
+        WebElement webElement = getWebElement(driver, pad_advanced);
+        new TouchAction(driver).press(webElement).waitAction(Duration.ofSeconds(1)).moveTo(getWebElement(driver, target)).release().perform();
+    }
 }
