@@ -4,3 +4,5 @@
 /.idea/libraries
 /screenCap/
 .idea/inspectionProfiles/
+/.idea/modules.xml
+/.idea/.name
